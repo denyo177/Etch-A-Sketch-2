@@ -18,5 +18,12 @@ function drawGrid(n) {
         }
         container.appendChild(column);
     }
-   
+    const divs = document.querySelectorAll(".row");
+    divs.forEach((div) => {
+        div.addEventListener("mouseover", () => {
+            div.style.backgroundColor = "black";
+        });
+    })
 }
+
+
