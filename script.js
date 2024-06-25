@@ -1,5 +1,7 @@
 
 
+
+
 function drawGrid(n) {
 
     const container = document.querySelector(".container");
@@ -25,5 +27,17 @@ function drawGrid(n) {
         });
     })
 }
+
+const btn = document.querySelector("#button");
+btn.addEventListener("click", () => {
+    
+    let size = prompt("Please enter the Size you want:");
+    while (size < 0 || size > 25) {
+        size = prompt("Please enter a smaller or valid number");
+    };  
+    
+    console.log(size);
+    }
+);
 
 
