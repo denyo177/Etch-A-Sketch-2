@@ -6,6 +6,10 @@ function drawGrid(n) {
 
     const container = document.querySelector(".container");
 
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
     for(j = 0; j < n; j++) {
         const column = document.createElement("div");
         column.style.display = "flex";
@@ -13,8 +17,8 @@ function drawGrid(n) {
             const row = document.createElement("div");
             row.classList.add("row");
             row.setAttribute("style", "border: 1px solid black");
-            row.style.height = "35px";
-            row.style.width = "35px";
+            row.style.height = 550 / n + "px";
+            row.style.width = 550 / n + "px";
             row.style.boxSizing = "border-box"; 
             column.appendChild(row);
         }
@@ -28,6 +32,7 @@ function drawGrid(n) {
     })
 }
 
+
 const btn = document.querySelector("#button");
 btn.addEventListener("click", () => {
     
@@ -35,8 +40,9 @@ btn.addEventListener("click", () => {
     while (size < 0 || size > 25) {
         size = prompt("Please enter a smaller or valid number");
     };  
+
+    drawGrid(size);
     
-    console.log(size);
     }
 );
 
